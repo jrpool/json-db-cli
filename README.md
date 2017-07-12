@@ -5,6 +5,10 @@ Application using a JSON file as a database and a CLI to query and modify it
 
 [Jonathan Pool](https://github.com/jrpool)
 
+## Project Technical Advisor
+
+[Trevor Little](https://github.com/bundacia)
+
 ## modules
 
 ```
@@ -25,15 +29,17 @@ This application demonstrates the use of a JSON-format text file as a database a
 
 The demonstration takes the form of a to-do list manager. You can use it to add tasks to the list, remove tasks from it (declaring them “done”), and list the tasks in it.
 
-The application fulfills the specifications of the “Command line Todo List With Callbacks” module in Phase 2 of the [Learners Guild][lg] curriculum.
+The application fulfills the requirements of the “Command line Todo List With Callbacks” module in Phase 2 of the [Learners Guild][lg] curriculum, with the exception of the requirement that “we're moving from fs.readFileSync & fs.writeFileSync to fs.readFile & fs.writeFile requiring you to use callbacks and async code flow control.”
 
-The features are somewhat enhanced in relation to these specifications, as follows:
+With that exception, the features are somewhat enhanced in relation to the requirements, as follows:
 
 - The `done` command takes not only an integer argument but instead, optionally, a range argument in the format of 2 integers delimited by a hyphen-minus character (e.g., `15-20`).
 
 - A `help` command causes a document describing the possible commands to be output.
 
 - The `done` command produces a report showing not only the description of the completed task, but also its ID. In the event that `done` has a range argument, and multiple tasks in the range have identical descriptions, a report needs to include IDs in order to positively identify the removed tasks.
+
+- A `reset` command reinitializes the application, once the database contains no tasks, so that the next task added will have ID 1.
 
 ### Implementation Notes
 
