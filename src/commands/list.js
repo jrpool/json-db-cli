@@ -11,11 +11,9 @@ const readJSONSync = module.require('../fileIO').readJSONSync;
     in a specified JSON file.
   Preconditions:
   0. filePath is the pathname of a UTF-8-encoded JSON file representing
-    an object whose keys are string representations of nonnegative integers,
-    whose values are nonblank, and which has a property with key "0", the
-    value of which property is a positive integer, such that no property of
-    the object has a key whose integer representation is greater than or
-    equal to it.
+    an object that has a property named “nextID” with an integer value, and
+    whose other properties, if any, have keys that can be cast to integers
+    all of which are less than the value of the “nextID” property.
   1. handleMessage is a function.
 */
 exports.list = (filePath, handleMessage, messages) => {
